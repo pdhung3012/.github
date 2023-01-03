@@ -1,2 +1,2 @@
 # .github
-Organization-wide GitHub settings
+GitHub Settings for the NWChemEx Organization

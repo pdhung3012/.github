@@ -1,4 +1,4 @@
-# Copyright 2022 CMakePP
+# Copyright 2022 NWChemEx-Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -38,8 +38,8 @@ jobs:
       - name: Push Licensed Files
         uses: EndBug/add-and-commit@v4
         with:
-          author_name: cmakepp[bot]
-          author_email: cmakepp[bot]@github.com
+          author_name: license[bot]
+          author_email: license[bot]@github.com
           message: 'Committing license headers'
         env:
           GITHUB_TOKEN: ${{ secrets.token }}
