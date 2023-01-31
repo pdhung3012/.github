@@ -44,21 +44,21 @@ jobs:
           github_token: ${{ secrets.token }}
           tag_as_user: .github[bot]
           tag_as_email: .github[bot]@github.com
-      # - id: compute_output
-      #   run: |
-      #     current_version=${{ steps.bumpr.outputs.current_version }}
-      #     next_version=${{ steps.bumpr.outputs.next_version }}
-      #     current_major="$(echo ${current_version} | cut -d'.' -f1)"
-      #     next_major="$(echo ${next_version} | cut -d'.' -f1)"
-      #     if [[ "${current_major}" == "${next_major}" ]]; then
-      #       echo "::set-output name=bumped_major::false"
-      #     else
-      #       echo "::set-output name=bumped_major::true"
-      #     fi
-      #     current_minor="$(echo ${current_version} | cut -d'.' -f2)"
-      #     next_minor="$(echo ${next_version} | cut -d'.' -f2)"
-      #     if [[ "${current_minor}" == "${next_minor}" ]]; then
-      #       echo "::set-output name=bumped_minor::false"
-      #     else
-      #       echo "::set-output name=bumped_minor::true"
-      #     fi
+      - id: compute_output
+        run: |
+          current_version=${{ steps.bumpr.outputs.current_version }}
+          next_version=${{ steps.bumpr.outputs.next_version }}
+          current_major="$(echo ${current_version} | cut -d'.' -f1)"
+          next_major="$(echo ${next_version} | cut -d'.' -f1)"
+          if [[ "${current_major}" == "${next_major}" ]]; then
+            echo "::set-output name=bumped_major::false"
+          else
+            echo "::set-output name=bumped_major::true"
+          fi
+          current_minor="$(echo ${current_version} | cut -d'.' -f2)"
+          next_minor="$(echo ${next_version} | cut -d'.' -f2)"
+          if [[ "${current_minor}" == "${next_minor}" ]]; then
+            echo "::set-output name=bumped_minor::false"
+          else
+            echo "::set-output name=bumped_minor::true"
+          fi
